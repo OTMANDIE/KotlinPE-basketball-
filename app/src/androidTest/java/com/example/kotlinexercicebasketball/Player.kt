@@ -1,16 +1,22 @@
 package com.example.kotlinexercicebasketball
 
-class Player(var name: String, var number: Int, var team: TeamName, var points: Int) {
+//Partie 1 Q1
 
+class Player(var name: String, var number: Int, var team: TeamName, var points: Int) {}
+
+//Partie 2
+
+enum class TeamName {
+    OCS,OCK,RCA,WAC
 }
+
+//Partie 3 Q1
 
 enum class Country {
     MOROCCO,TUNISIA,ALGERIA,EGYPT,MAURITANIA
 }
 
-enum class TeamName {
-    OCS,OCK,RCA,WAC
-}
+//Partie 3 Q3
 
 class Team (var country: Country,var teamName: TeamName){
 
@@ -41,6 +47,8 @@ class Team (var country: Country,var teamName: TeamName){
             return true
     }
 
+    //Partie 3 Q4
+
     fun setPoints(player: Player, points: Int) {
         val index = research(player)
         if (index != -1) {
@@ -59,14 +67,26 @@ class Team (var country: Country,var teamName: TeamName){
 
 
 fun main() {
+
+//    Partie 1 Q2
+
+    val p1 = Player("Ahmed", 1, TeamName.OCS,20)
+    val p2 = Player("Otmane", 2, TeamName.OCK,40)
+    val p3 = Player("Mohammed", 3, TeamName.OCS,50)
+
+//    Partie 1 Q3
+
+    val players = mutableListOf<Player>()
+    val p4 = Player("Hassan",4,TeamName.RCA,60)
+
+    //Partie 3 Q5.a
+
     val E1 = Team(Country.MOROCCO, TeamName.OCS)
     val E2 = Team(Country.ALGERIA, TeamName.OCK)
     val E3 = Team(Country.TUNISIA, TeamName.RCA)
     val E4 = Team(Country.MAURITANIA, TeamName.WAC)
 
-    val p1 = Player("Ahmed", 1, TeamName.OCS,20)
-    val p2 = Player("Otmane", 2, TeamName.OCK,40)
-    val p3 = Player("Mohammed", 3, TeamName.OCS,50)
+    //Partie 3 Q5.b
 
     E1.add(p1)
     E2.add(p2)
